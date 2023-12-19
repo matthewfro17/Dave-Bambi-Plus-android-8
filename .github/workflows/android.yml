@@ -32,8 +32,6 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@main
 
       - name: Setup Haxe
         uses: krdlab/setup-haxe@master
@@ -53,7 +51,7 @@ jobs:
           haxelib --quiet install polymod
           haxelib --quiet install hscript
           haxelib --quiet install hxcpp-debug-server
-          haxelib --quiet git hxCodec https://github.com/polybiusproxy/hxCodec
+          haxelib install hxCodec 2.5.1
           haxelib --quiet git extension-androidtools https://github.com/MAJigsaw77/extension-androidtools.git
       - name: Setup Lime
         run: |
