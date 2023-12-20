@@ -9,7 +9,6 @@ import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.addons.transition.FlxTransitionableState;
-import flixel.addons.display.FlxBackdrop;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
@@ -28,7 +27,6 @@ class PlaySelectionState extends MusicBeatState
 	var camFollow:FlxObject;
 
 	var bg:FlxSprite = new FlxSprite();
-	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('ui/checkeredBG'), 0.2, 0.2, true, true);
 	var gradientBar:FlxSprite = new FlxSprite(0, 0).makeGraphic(FlxG.width, 300, 0xFFfd719b);
 	var side:FlxSprite = new FlxSprite(0).loadGraphic(Paths.image('ui/Play_Bottom'));
 
@@ -100,9 +98,6 @@ class PlaySelectionState extends MusicBeatState
 		gradientBar.scrollFactor.set(0, 0);
 		gradientBar.antialiasing = FlxG.save.data.globalAntialiasing;
 
-		add(checker);
-		checker.scrollFactor.set(0, 0.07);
-
 		side.scrollFactor.x = 0;
 		side.scrollFactor.y = 0.1;
 		side.antialiasing = true;
@@ -134,11 +129,9 @@ class PlaySelectionState extends MusicBeatState
 		FlxG.camera.follow(camFollow, null, camLerp);
 
 		FlxG.camera.zoom = 3;
-		side.alpha = checker.alpha = 0;
 		FlxTween.tween(FlxG.camera, { zoom: 1}, 1.2, { ease: FlxEase.expoInOut });
 		FlxTween.tween(bg, { y:-30}, 1, { ease: FlxEase.quartInOut,});
 		FlxTween.tween(side, { alpha:1}, 1, { ease: FlxEase.quartInOut});
-		FlxTween.tween(checker, { alpha:1}, 1.15, { ease: FlxEase.quartInOut});
 
 		// NG.core.calls.event.logEvent('swag').send();
 
@@ -157,9 +150,6 @@ class PlaySelectionState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-		checker.x -= 0.21;
-		checker.y -= 0.51;
-
 		if(FlxG.save.data.waving){
 			#if SHADERS_ENABLED
 			if (bgShader != null)
