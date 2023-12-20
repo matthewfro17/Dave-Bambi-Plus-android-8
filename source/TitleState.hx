@@ -132,7 +132,7 @@ class TitleState extends MusicBeatState
 	var gfDance:FlxSprite;
 	var danceLeft:Bool = false;
 	var titleText:FlxSprite;
-	var bgMenu:FlxAxes;
+	var bgMenu:FlxAxes  = new FlxAxes(Paths.image('ui/titleBg'), 10, 0, true, true);
 	var bgFlash:FlxSprite;
 
 	function startIntro()
@@ -161,8 +161,7 @@ class TitleState extends MusicBeatState
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
 
-		bgMenu = new FlxAxes(Paths.image('ui/titleBg'), 10, 0, true, true);
-        bgMenu.velocity.set(70, 70); //thats it :D- snake
+                bgMenu.velocity.set(70, 70); //thats it :D- snake
 		add(bgMenu);
 
 		logoBl = new FlxSprite(-25, -50);
