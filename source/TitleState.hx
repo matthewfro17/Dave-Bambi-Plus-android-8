@@ -20,7 +20,6 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import openfl.Assets;
 import lime.app.Application;
-import flixel.util.FlxAxes;
 import flixel.addons.effects.FlxTrail;
 import flixel.math.FlxMath;
 #if desktop
@@ -132,7 +131,6 @@ class TitleState extends MusicBeatState
 	var gfDance:FlxSprite;
 	var danceLeft:Bool = false;
 	var titleText:FlxSprite;
-	var bgMenu:FlxAxes = new FlxAxes(Paths.image('ui/checkeredBG'), 10, 0, true, true);
 	var bgFlash:FlxSprite;
 
 	function startIntro()
@@ -160,9 +158,6 @@ class TitleState extends MusicBeatState
 
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
-
-                bgMenu.velocity.set(70, 70); //thats it :D- snake
-		add(bgMenu);
 
 		logoBl = new FlxSprite(-25, -50);
 		if (!awaitingExploitation)
@@ -348,7 +343,6 @@ class TitleState extends MusicBeatState
 	        FlxTween.tween(logoBl, {alpha: 0}, 1.2, {ease: FlxEase.expoInOut});
 			FlxTween.tween(logoBl, {y: 2000}, 2.5, {ease: FlxEase.expoInOut});
 			FlxTween.tween(bgFlash, {y: 2000}, 2, {ease: FlxEase.expoInOut});
-            FlxTween.tween(bgMenu, {x: -1000}, 5, {ease: FlxEase.expoInOut});
 
 			if (!awaitingExploitation){
 				FlxTween.tween(gfDance, {y:2000}, 2.5, {ease: FlxEase.expoInOut});
