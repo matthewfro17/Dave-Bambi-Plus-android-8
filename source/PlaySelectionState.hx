@@ -205,7 +205,6 @@ class PlaySelectionState extends MusicBeatState
 				FlxTween.tween(FlxG.camera, { zoom: 2}, 0.4, { ease: FlxEase.expoIn});
 				FlxTween.tween(bg, { y: 0-bg.height}, 0.4, { ease: FlxEase.expoIn });
 				FlxTween.tween(side, { alpha:0}, 0.4, { ease: FlxEase.quartInOut});
-				FlxTween.tween(checker, { alpha:0}, 0.4, { ease: FlxEase.quartInOut});
 			}
 
 			if (controls.ACCEPT)
@@ -218,7 +217,6 @@ class PlaySelectionState extends MusicBeatState
 					FlxTween.tween(FlxG.camera, { zoom: 12}, 0.8, { ease: FlxEase.expoIn, startDelay: 0.4});
 					FlxTween.tween(bg, { y: 0-bg.height}, 1.6, { ease: FlxEase.expoIn });
 					FlxTween.tween(side, { alpha:0}, 0.6, { ease: FlxEase.quartInOut, startDelay: 0.3});
-					FlxTween.tween(checker, { alpha:0}, 0.6, { ease: FlxEase.quartInOut, startDelay: 0.3});
 
 					FlxTween.tween(spr, {y: -48000}, 2.5, {
 						ease: FlxEase.expoIn,
