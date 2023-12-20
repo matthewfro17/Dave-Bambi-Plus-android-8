@@ -51,7 +51,8 @@ jobs:
           haxelib --quiet install polymod
           haxelib --quiet install hscript
           haxelib --quiet install hxcpp-debug-server
-          haxelib install hxCodec 2.5.1
+          haxelib --quiet install hxCodec 2.5.1
+          haxelib --quiet git discord_rpc https://github.com/Aidan63/linc_discord-rpc
           haxelib --quiet git extension-androidtools https://github.com/MAJigsaw77/extension-androidtools.git
       - name: Setup Lime
         run: |
