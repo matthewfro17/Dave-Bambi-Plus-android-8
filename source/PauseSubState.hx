@@ -9,19 +9,17 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxSubState;
 import flixel.group.FlxGroup.FlxTypedGroup;
-import flixel.system.FlxSound;
+import flixel.sound.FlxSound;
 import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
-import flixel.addons.display.FlxBackdrop;
 import lime.app.Application;
 import openfl.Lib;
 
 class PauseSubState extends MusicBeatSubstate
 {
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
-	var bg:FlxBackdrop;
 
 	var pausebg:FlxSprite;
 	var pausebg1:FlxSprite;
@@ -116,12 +114,6 @@ class PauseSubState extends MusicBeatSubstate
 
 		if (!FlxG.save.data.lowQuality)
 		{
-			bg = new FlxBackdrop(Paths.image('ui/checkeredBG', 'preload'), 1, 1, true, true, 1, 1);
-			bg.alpha = 0;
-			bg.antialiasing = FlxG.save.data.globalAntialiasing;
-			bg.scrollFactor.set();
-			add(bg);
-
 			pausebg = new FlxSprite().loadGraphic(Paths.image('ui/pausemenubg'));
 			pausebg.color = 0xFF1E1E1E;
 			pausebg.scrollFactor.set();
